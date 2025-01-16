@@ -5,7 +5,7 @@ return {
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "rust_analyzer", "clangd" },
+        ensure_installed = { "rust_analyzer", "clangd", "html", "ts_ls", "volar" },
       })
     end,
   },
