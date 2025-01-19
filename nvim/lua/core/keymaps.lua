@@ -24,3 +24,20 @@ keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live Gre
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffers" })
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Find Help" })
 
+-- 启用Neovide配置
+local g = vim.g
+g.neovide_transparency = 0.9
+keymap.set("n", "<C-=>", function()
+    vim.g.neovide_transparency = math.min(vim.g.neovide_transparency + 0.1, 1)
+end)
+keymap.set("n", "<C-->", function()
+    vim.g.neovide_transparency = math.max(vim.g.neovide_transparency - 0.1, 0.1)
+end)
+keymap.set("n", "<C-+>", function()
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1
+end)
+keymap.set("n", "<C-->", function()
+    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1
+end)
+g.neovide_refresh_rate = 60
+
