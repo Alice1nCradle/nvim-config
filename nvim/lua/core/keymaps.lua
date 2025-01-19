@@ -39,5 +39,4 @@ end)
 keymap.set("n", "<C-->", function()
     vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1
 end)
-g.neovide_refresh_rate = 60
 
