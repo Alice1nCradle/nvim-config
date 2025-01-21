@@ -17,6 +17,10 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 -- 启用nvim-tree
 keymap.set("n", "<leader>tr", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>r", function()
+    require("nvim-tree.api").tree.reload()
+end, { desc = "重载文件树" })
+
 
 -- 启用nvim-telescope快捷键
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
