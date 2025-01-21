@@ -15,12 +15,10 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- 垂直新增窗口
 -- 取消高亮
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
--- 启用nvim-tree
-keymap.set("n", "<leader>tr", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>r", function()
-    require("nvim-tree.api").tree.reload()
-end, { desc = "重载文件树" })
-
+-- 启用neo-tree
+keymap.set("n", "<leader>t", ":Neotree<CR>", { noremap = true, silent = true, desc = "Toggle Neo-tree" })
+keymap.set("n", "<leader>r", ":Neotree reveal<CR>", { noremap = true, silent = true, desc = "Reveal current file in Neo-tree" })
+keymap.set("n", "<leader>e", ":Neotree close<CR>", {noremap = true, silent = true, desc = "Close Neo-tree"})
 
 -- 启用nvim-telescope快捷键
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find Files" })
